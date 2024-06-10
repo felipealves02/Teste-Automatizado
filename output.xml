@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-06-06T23:17:53.102762" rpa="false" schemaversion="5">
+<suite id="s1" name="Amazon Testes" source="C:\CursoUdemy\RobotFramework\WebTest\amazon_testes.robot">
+<test id="s1-t1" name="Caso de Teste 04 - Remover Produto do Carrinho" line="40">
+<kw name="Abrir o navegador" owner="amazon_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-06-06T23:17:53.268729" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-06-06T23:17:53.268729" elapsed="1.723326"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-06-06T23:17:54.992055" elapsed="0.022924"/>
+</kw>
+<status status="PASS" start="2024-06-06T23:17:53.268729" elapsed="1.746250"/>
+</kw>
+<kw name="Acessar a home page do site Amazon.com.br" owner="amazon_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-06-06T23:17:55.015975" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-06-06T23:17:55.015975" elapsed="0.674393"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-06-06T23:18:15.690519" level="INFO">Slept 20 seconds.</msg>
+<arg>20s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-06-06T23:17:55.690368" elapsed="20.000151"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${MENU_ELETRONICOS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-06-06T23:18:15.690519" elapsed="0.034956"/>
+</kw>
+<status status="PASS" start="2024-06-06T23:17:55.014979" elapsed="20.710496"/>
+</kw>
+<kw name="Digitar o nome de produto &quot;Xbox Series S&quot; no campo de pesquisa" owner="amazon_resources" source_name="Digitar o nome de produto &quot;${PRODUTO}&quot; no campo de pesquisa">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-06T23:18:15.727440" level="INFO">Typing text 'Xbox Series S' into text field '//input[contains(@type,'text')]'.</msg>
+<arg>locator=//input[contains(@type,'text')]</arg>
+<arg>text=${PRODUTO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-06T23:18:15.727440" elapsed="0.094955"/>
+</kw>
+<status status="PASS" start="2024-06-06T23:18:15.726434" elapsed="0.097018"/>
+</kw>
+<kw name="Clicar no botão de pesquisa" owner="amazon_resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-06-06T23:18:15.824388" level="INFO">Clicking element 'nav-search-submit-button'.</msg>
+<arg>locator=nav-search-submit-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-06T23:18:15.823452" elapsed="1.649512"/>
+</kw>
+<status status="PASS" start="2024-06-06T23:18:15.823452" elapsed="1.649512"/>
+</kw>
+<kw name="Verificar o resultado da pesquisa se está listando o produto &quot;Xbox Series S&quot;" owner="amazon_resources" source_name="Verificar o resultado da pesquisa se está listando o produto &quot;${PRODUTO}&quot;">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=(//div[@class='sg-col-inner'])[7]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-06-06T23:18:17.473961" elapsed="0.014951"/>
+</kw>
+<status status="PASS" start="2024-06-06T23:18:17.473961" elapsed="0.014951"/>
+</kw>
+<kw name="Adicionar o produto &quot;Xbox Series S&quot; no carrinho" owner="amazon_resources" source_name="Adicionar o produto &quot;${PRODUTO}&quot; no carrinho">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-06-06T23:18:17.489734" level="INFO">Clicking button 'a-autoid-2-announce'.</msg>
+<arg>locator=a-autoid-2-announce</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-06T23:18:17.489734" elapsed="0.073614"/>
+</kw>
+<status status="PASS" start="2024-06-06T23:18:17.489734" elapsed="0.073614"/>
+</kw>
+<kw name="Verificar se o produto &quot;Xbox Series S&quot; foi adicionado com sucesso" owner="amazon_resources" source_name="Verificar se o produto &quot;${PRODUTO}&quot; foi adicionado com sucesso">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=//img[@src='https://m.media-amazon.com/images/I/61f1agMOeTL._AC_AA152_.jpg']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-06-06T23:18:17.564345" elapsed="1.308539"/>
+</kw>
+<status status="PASS" start="2024-06-06T23:18:17.564345" elapsed="1.308539"/>
+</kw>
+<kw name="Remover o produto &quot;Xbox Series S&quot; do carrinho" owner="amazon_resources" source_name="Remover o produto &quot;${PRODUTO}&quot; do carrinho">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-06-06T23:18:18.873882" level="INFO">Clicking element 'nav-cart-count-container'.</msg>
+<msg time="2024-06-06T23:18:20.119890" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-06-06T23:18:20.119890" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;div id="nav-cart-count-container"&gt;...&lt;/div&gt; is not clickable at point (1672, 24). Other element would receive the click: &lt;div class="a-changeover-inner"&gt;...&lt;/div&gt;
+  (Session info: chrome=125.0.6422.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF607641F52+60322]
+	(No symbol) [0x00007FF6075BCEC9]
+	(No symbol) [0x00007FF607477EBA]
+	(No symbol) [0x00007FF6074CF32E]
+	(No symbol) [0x00007FF6074CCCF2]
+	(No symbol) [0x00007FF6074CA18B]
+	(No symbol) [0x00007FF6074C9356]
+	(No symbol) [0x00007FF6074BB491]
+	(No symbol) [0x00007FF6074EC21A]
+	(No symbol) [0x00007FF6074BADB6]
+	(No symbol) [0x00007FF6074EC430]
+	(No symbol) [0x00007FF60750BC80]
+	(No symbol) [0x00007FF6074EBFC3]
+	(No symbol) [0x00007FF6074B9617]
+	(No symbol) [0x00007FF6074BA211]
+	GetHandleVerifier [0x00007FF6079594AD+3301629]
+	GetHandleVerifier [0x00007FF6079A36D3+3605283]
+	GetHandleVerifier [0x00007FF607999450+3563680]
+	GetHandleVerifier [0x00007FF6076F4326+790390]
+	(No symbol) [0x00007FF6075C750F]
+	(No symbol) [0x00007FF6075C3404]
+	(No symbol) [0x00007FF6075C3592]
+	(No symbol) [0x00007FF6075B2F9F]
+	BaseThreadInitThunk [0x00007FFF1A18257D+29]
+	RtlUserThreadStart [0x00007FFF1C46AA58+40]
+</msg>
+<arg>${CARRINHO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-06-06T23:18:18.873882" elapsed="1.251251">ElementClickInterceptedException: Message: element click intercepted: Element &lt;div id="nav-cart-count-container"&gt;...&lt;/div&gt; is not clickable at point (1672, 24). Other element would receive the click: &lt;div class="a-changeover-inner"&gt;...&lt;/div&gt;
+  (Session info: chrome=125.0.6422.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF607641F52+60322]
+	(No symbol) [0x00007FF6075BCEC9]
+	(No symbol) [0x00007FF607477EBA]
+	(No symbol) [0x00007FF6074CF32E]
+	(No symbol) [0x00007FF6074CCCF2]
+	(No symbol) [0x00007FF6074CA18B]
+	(No symbol) [0x00007FF6074C9356]
+	(No symbol) [0x00007FF6074BB491]
+	(No symbol) [0x00007FF6074EC21A]
+	(No symbol) [0x00007FF6074BADB6]
+	(No symbol) [0x00007FF6074EC430]
+	(No symbol) [0x00007FF60750BC80]
+	(No symbol) [0x00007FF6074EBFC3]
+	(No symbol) [0x00007FF6074B9617]
+	(No symbol) [0x00007FF6074BA211]
+	GetHandleVerifier [0x00007FF6079594AD+3301629]
+	GetHandleVerifier [0x00007FF6079A36D3+3605283]
+	GetHandleVerifier [0x00007FF607999450+3563680]
+	GetHandleVerifier [0x00007FF6076F4326+790390]
+	(No symbol) [0x00007FF6075C750F]
+	(No symbol) [0x00007FF6075C3404]
+	(No symbol) [0x00007FF6075C3592]
+	(No symbol) [0x00007FF6075B2F9F]
+	BaseThreadInitThunk [0x00007FFF1A18257D+29]
+	RtlUserThreadStart [0x00007FFF1C46AA58+40]
+</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REMOVER_PRODUTO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-06-06T23:18:20.125133" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${REMOVER_PRODUTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-06-06T23:18:20.125133" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>//span[contains(.,'Xbox Series S</arg>
+<arg>Abre em uma nova aba</arg>
+<arg>foi removido de Carrinho de compras.')]</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2024-06-06T23:18:20.125133" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-06-06T23:18:18.872884" elapsed="1.253245">ElementClickInterceptedException: Message: element click intercepted: Element &lt;div id="nav-cart-count-container"&gt;...&lt;/div&gt; is not clickable at point (1672, 24). Other element would receive the click: &lt;div class="a-changeover-inner"&gt;...&lt;/div&gt;
+  (Session info: chrome=125.0.6422.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF607641F52+60322]
+	(No symbol) [0x00007FF6075BCEC9]
+	(No symbol) [0x00007FF607477EBA]
+	(No symbol) [0x00007FF6074CF32E]
+	(No symbol) [0x00007FF6074CCCF2]
+	(No symbol) [0x00007FF6074CA18B]
+	(No symbol) [0x00007FF6074C9356]
+	(No symbol) [0x00007FF6074BB491]
+	(No symbol) [0x00007FF6074EC21A]
+	(No symbol) [0x00007FF6074BADB6]
+	(No symbol) [0x00007FF6074EC430]
+	(No symbol) [0x00007FF60750BC80]
+	(No symbol) [0x00007FF6074EBFC3]
+	(No symbol) [0x00007FF6074B9617]
+	(No symbol) [0x00007FF6074BA211]
+	GetHandleVerifier [0x00007FF6079594AD+3301629]
+	GetHandleVerifier [0x00007FF6079A36D3+3605283]
+	GetHandleVerifier [0x00007FF607999450+3563680]
+	GetHandleVerifier [0x00007FF6076F4326+790390]
+	(No symbol) [0x00007FF6075C750F]
+	(No symbol) [0x00007FF6075C3404]
+	(No symbol) [0x00007FF6075C3592]
+	(No symbol) [0x00007FF6075B2F9F]
+	BaseThreadInitThunk [0x00007FFF1A18257D+29]
+	RtlUserThreadStart [0x00007FFF1C46AA58+40]
+</status>
+</kw>
+<kw name="Verificar se o produto foi removido" owner="amazon_resources">
+<status status="NOT RUN" start="2024-06-06T23:18:20.126129" elapsed="0.000000"/>
+</kw>
+<kw name="Fechar o navegador" owner="amazon_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-06-06T23:18:20.291860" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-06-06T23:18:20.127131" elapsed="0.164729"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-06-06T23:18:20.291860" elapsed="2.139300"/>
+</kw>
+<status status="PASS" start="2024-06-06T23:18:20.126129" elapsed="2.305031"/>
+</kw>
+<doc>Esse teste verifica a remoção de um produto no carrinho de compras</doc>
+<tag>remover_carrinho</tag>
+<status status="FAIL" start="2024-06-06T23:17:53.268403" elapsed="29.162757">ElementClickInterceptedException: Message: element click intercepted: Element &lt;div id="nav-cart-count-container"&gt;...&lt;/div&gt; is not clickable at point (1672, 24). Other element would receive the click: &lt;div class="a-changeover-inner"&gt;...&lt;/div&gt;
+  (Session info: chrome=125.0.6422.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF607641F52+60322]
+	(No symbol) [0x00007FF6075BCEC9]
+	(No symbol) [0x00007FF607477EBA]
+	(No symbol) [0x00007FF6074CF32E]
+	(No symbol) [0x00007FF6074CCCF2]
+	(No symbol) [0x00007FF6074CA18B]
+	(No symbol) [0x00007FF6074C9356]
+	(No symbol) [0x00007FF6074BB491]
+	(No symbol) [0x00007FF6074EC21A]
+	(No symbol) [0x00007FF6074BADB6]
+	(No symbol) [0x00007FF6074EC430]
+	(No symbol) [0x00007FF60750BC80]
+	(No symbol) [0x00007FF6074EBFC3]
+	(No symbol) [0x00007FF6074B9617]
+	(No symbol) [0x00007FF6074BA211]
+	GetHandleVerifier [0x00007FF6079594AD+3301629]
+	GetHandleVerifier [0x00007FF6079A36D3+3605283]
+	GetHandleVerifier [0x00007FF607999450+3563680]
+	GetHandleVerifier [0x00007FF6076F4326+790390]
+	(No symbol) [0x00007FF6075C750F]
+	(No symbol) [0x00007FF6075C3404]
+	(No symbol) [0x00007FF6075C3592]
+	(No symbol) [0x00007FF6075B2F9F]
+	BaseThreadInitThunk [0x00007FFF1A18257D+29]
+	RtlUserThreadStart [0x00007FFF1C46AA58+40]
+</status>
+</test>
+<doc>Essa suite testa o site da Amazon.com.br</doc>
+<status status="FAIL" start="2024-06-06T23:17:53.103761" elapsed="29.330417"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">remover_carrinho</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Amazon Testes">Amazon Testes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
